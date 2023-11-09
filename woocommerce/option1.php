@@ -124,50 +124,50 @@ while (have_posts()) :
                     );
                     $recent_posts = wp_get_recent_posts( $args );
                     if (!empty($recent_posts)) {
-                    foreach( $recent_posts as $recent ){
-                                echo '<div class="swiper-slide">';
-                                    echo '<div class="flpvi-related-post-wrap">';
-                                        echo '<div class="flpvi-related-block-inner">';
-                                            if($flpvi_relpro_prodimg_check_value==true){
-                                            echo '<div class="flpvi-related-image">';
-                                            if(get_the_post_thumbnail($recent["ID"])){
-                                                echo '<a href="' . get_permalink($recent["ID"]) . '">' . get_the_post_thumbnail($recent["ID"], 'thumbnail') . '</a>';
-                                            }else{
-                                                echo '<a href="' . get_permalink($recent["ID"]) . '"><img src="'.plugin_dir_url( __FILE__ ).'../all-inc/public-assets/image/bwd-placeholder.jpg'.'" alt="Featured Image"></a>';
-                                            }
-                                            echo '</div>';
-                                            }
-                                            if($flpvi_relpro_button_check_value==true){
-                                            echo '<div class="flpvi-group-add-to-cart">';
-                                                echo '<div class="flpvi-add-cart">';
-                                                    echo '<a href="'.get_permalink($recent["ID"]).'">'.esc_html__('View', 'flexi-post-view').'</a>';
-                                                echo '</div>';
-                                            echo '</div>';
-                                            }
+                        foreach( $recent_posts as $recent ){
+                            echo '<div class="swiper-slide">';
+                                echo '<div class="flpvi-related-post-wrap">';
+                                    echo '<div class="flpvi-related-block-inner">';
+                                        if($flpvi_relpro_prodimg_check_value==true){
+                                        echo '<div class="flpvi-related-image">';
+                                        if(get_the_post_thumbnail($recent["ID"])){
+                                            echo '<a href="' . get_permalink($recent["ID"]) . '">' . get_the_post_thumbnail($recent["ID"], 'thumbnail') . '</a>';
+                                        }else{
+                                            echo '<a href="' . get_permalink($recent["ID"]) . '"><img src="'.plugin_dir_url( __FILE__ ).'../all-inc/public-assets/image/bwd-placeholder.jpg'.'" alt="Featured Image"></a>';
+                                        }
                                         echo '</div>';
-                                        echo '<div class="flpvi-related-content">';
-                                            if($flpvi_relpro_prodtitle_check_value==true){
-                                                echo '<div class="flpvi-related-caption">';
-                                                    echo '<a href="' . esc_url(get_permalink($recent["ID"])) . '">' . $recent["post_title"]  . '</a>';
-                                                echo '</div>';
-                                            }
-                                            if($flpvi_relpro_dsc_check_value==true){
+                                        }
+                                        if($flpvi_relpro_button_check_value==true){
+                                        echo '<div class="flpvi-group-add-to-cart">';
+                                            echo '<div class="flpvi-add-cart">';
+                                                echo '<a href="'.get_permalink($recent["ID"]).'">'.esc_html__('View', 'flexi-post-view').'</a>';
+                                            echo '</div>';
+                                        echo '</div>';
+                                        }
+                                    echo '</div>';
+                                    echo '<div class="flpvi-related-content">';
+                                        if($flpvi_relpro_prodtitle_check_value==true){
                                             echo '<div class="flpvi-related-caption">';
-                                                echo '<p class="flpvi-related-desc">' . wp_trim_words(get_the_content(),esc_html__($flpvi_relpro_dscwordl_value, 'flexi-post-view'),esc_html__($flpvi_relpro_dscind_value, 'flexi-post-view')) . '</p>';
+                                                echo '<a href="' . esc_url(get_permalink($recent["ID"])) . '">' . $recent["post_title"]  . '</a>';
                                             echo '</div>';
-                                            }
-                                            // if($flpvi_relpro_prodpric_check_value==true){
-                                            //     $dfdf = get_the_category($recent->ID);
-                                            //     echo '<div class="flpvi-price-code flpvi-related-price-code">' . $dfdf[0]->name . '</div>';
-                                            // }
+                                        }
+                                        if($flpvi_relpro_dsc_check_value==true){
+                                        echo '<div class="flpvi-related-caption">';
+                                            echo '<p class="flpvi-related-desc">' . wp_trim_words(get_the_content(),esc_html__($flpvi_relpro_dscwordl_value, 'flexi-post-view'),esc_html__($flpvi_relpro_dscind_value, 'flexi-post-view')) . '</p>';
                                         echo '</div>';
+                                        }
+                                        // if($flpvi_relpro_prodpric_check_value==true){
+                                        //     $dfdf = get_the_category($recent->ID);
+                                        //     echo '<div class="flpvi-price-code flpvi-related-price-code">' . $dfdf[0]->name . '</div>';
+                                        // }
                                     echo '</div>';
                                 echo '</div>';
-                            }
-                        } else {
-                            echo '<p>' . esc_html__('No related posts found.', 'flexi-post-view') . '</p>'; 
+                            echo '</div>';
                         }
-                    // }
+                    } else {
+                        echo '<p>' . esc_html__('No related posts found.', 'flexi-post-view') . '</p>'; 
+                    }
+                // }
                 echo '</div>';
                 echo '<div class="swiper-button-next"><i class="fa-solid fa-chevron-right"></i></div>';
                 echo '<div class="swiper-button-prev"><i class="fa-solid fa-chevron-left"></i></div>';
