@@ -164,18 +164,19 @@ function flpvi_button_position_cb(){
 			echo '<div class="grid-container">';
 				foreach ($sections as $section_id => $section_title):
 					echo '<section id="'.esc_attr($section_id).'">';
-							echo '<h2>'.esc_html($section_title).'</h2>';
-							echo '<button class="install-button" data-installed="false" onclick="simulateLoading(this)">';
-									echo '<span class="loading-icon"></span>';
-									echo '<span class="install-text">'.esc_html__('Install','flexi-post-view').'</span>';
-									echo '<span class="uninstall-text">'.esc_html__('Uninstall','flexi-post-view').'</span>';
-							echo '</button>';
+						echo '<h2>'.esc_html($section_title).'</h2>';
+						echo '<button class="install-button" data-installed="false" onclick="simulateLoading(this)">';
+								echo '<span class="loading-icon"></span>';
+								echo '<span class="install-text">'.esc_html__('Install','flexi-post-view').'</span>';
+								echo '<span class="uninstall-text">'.esc_html__('Uninstall','flexi-post-view').'</span>';
+						echo '</button>';
+						echo '<a class="flpvi-view-demo" href="bestwpdeveloper.com/flexi-post-view" target="_blank">'.esc_html__('View Demo', 'flexi-post-view').'</a>';
 					echo '</section>';
 				endforeach;
 			echo '</div>';
 			echo '<div id="installed-sections">';
 			$lastInstalledSection = get_option('last_installed_section', '');
-			echo '<div id="last-installed-section"></div>';
+			echo '<div id="last-installed-section"></div>';// This is for installation massege
 			echo '</div>';
 		echo '</div>';
 	echo '</div>';

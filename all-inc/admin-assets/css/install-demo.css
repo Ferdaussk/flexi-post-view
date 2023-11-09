@@ -6,9 +6,16 @@
 }
 
 section {
-  background-color: #cccccc;
+  background-color: #95a5a6;
   padding: 4rem;
   text-align: center;
+  border: 2px solid #727272;
+  border-radius: 5px;
+  transform: perspective(1000px) rotateX(10deg);
+  transition: transform 0.3s;
+}
+section:hover {
+  transform: perspective(1000px) rotateX(0deg);
 }
 button.install-button:focus {
   outline: none;
@@ -18,28 +25,46 @@ button.install-button:focus {
   border: none;
 }
 .install-text {
-  background-color: #007BFF;
-  color: white;
+  background-color: #d5d5d5;
+  color: #4a4f5a;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 8px 5px;
   cursor: pointer;
   font-size: 14px;
   border-radius: 4px;
+  font-weight: bold;
 }
 .install-text:hover {
-  background-color: #0056b3;
+  background-color: #d5d5d5;
 }
-.uninstall-text {
-  background-color: #ed5959;
-  color: white;
+.flpvi-view-demo {
+  background-color: #d5d5d5;
+  color: #4a4f5a;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 8px 5px;
   cursor: pointer;
   font-size: 14px;
   border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.flpvi-view-demo:hover {
+  background-color: #d5d5d5;
+  color: #4a4f5a;
+  text-decoration: none;
+}
+.uninstall-text {
+  background-color: #f1c40f;
+  color: #2a2a2a;
+  border: none;
+  padding: 8px 5px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  font-weight: bold;
 }
 .uninstall-text:hover {
-  background-color: #e05b5b;
+  background-color: #f1c40f;
 }
 .loading {
   background-color: #ccc;
@@ -92,7 +117,7 @@ button.install-button:focus {
 
 /* Styles for the popup content */
 .popup-content {
-  background-color: white;
+  background-color: #e5e5e5;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

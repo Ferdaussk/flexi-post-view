@@ -89,6 +89,7 @@ while (have_posts()) :
                     foreach((get_the_category()) as $category) { echo $category->cat_name; }
                 echo '</div>';
                 }
+                echo '<a class="flpvi-single-buy-now flpvi-button" href="'.get_permalink().'">'.esc_html__('See Blogs', 'flexi-post-view').'</a>';
                 // Tags
                 if($flpvi_tags_check_value==true){
                 echo '<div class="flpvi-tags-wrapper flpvi-meta-gap">';
@@ -129,7 +130,11 @@ while (have_posts()) :
                                         echo '<div class="flpvi-related-block-inner">';
                                             if($flpvi_relpro_prodimg_check_value==true){
                                             echo '<div class="flpvi-related-image">';
+                                            if(get_the_post_thumbnail($recent["ID"])){
                                                 echo '<a href="' . get_permalink($recent["ID"]) . '">' . get_the_post_thumbnail($recent["ID"], 'thumbnail') . '</a>';
+                                            }else{
+                                                echo '<a href="' . get_permalink($recent["ID"]) . '"><img src="'.plugin_dir_url( __FILE__ ).'../all-inc/public-assets/image/bwd-placeholder.jpg'.'" alt="Featured Image"></a>';
+                                            }
                                             echo '</div>';
                                             }
                                             if($flpvi_relpro_button_check_value==true){
